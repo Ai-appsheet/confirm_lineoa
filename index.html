@@ -73,7 +73,7 @@
           <label for="otp" class="form-label">รหัส OTP (ตรวจสอบในอีเมลของคุณ)</label>
           <div class="input-group">
               <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-key"></i></span></div>
-              <input type="text" class="form-control" id="otp" name="otp" placeholder="กรอกรหัส 6 หลัก" required>
+              <input type="text" class="form-control" id="otp" name="otp" placeholder="กรอกรหัส 6 หลัก">
           </div>
       </div>
       
@@ -138,6 +138,10 @@
                   registerBtn.style.display = 'inline-block';
                   otpGroup.style.display = 'block';
                   emailInput.readOnly = true; // ไม่ให้แก้ไขอีเมล
+                  
+                  // ✨ แก้ไข: เพิ่ม thuộc tính "required" ให้ช่อง OTP ณ จุดนี้
+                  document.getElementById('otp').required = true;
+
               } else {
                   throw new Error(data.error || 'ไม่สามารถส่ง OTP ได้');
               }
@@ -194,5 +198,4 @@
 </script>
 
 </body>
-
 </html>
